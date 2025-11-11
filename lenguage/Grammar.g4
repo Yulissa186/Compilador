@@ -7,10 +7,10 @@ statement: assing|print|if_statement|for_statement;
 assing:ID'='expr;
 
 /*Definimos print*/
-print:'print' '('expr')'
+print:'print' '('expr')';
 
 /*Definimos if*/
-if_statement: 'if' '('expr')'block;
+if_statement: 'if''('expr')'block;
 
 /*Definimos for*/
 for_statement:'for''('assing';'expr';'assing')'block;
@@ -22,7 +22,7 @@ block:'{'(statement NEWLINE)*'}';
 
 expr:expr op=('*'|'/')expr
     |expr op=('+'|'-')expr
-    |expr op=('>'|'<'\'>=''<=')expr
+    |expr op=('>'|'<'|'>='|'<=')expr
     |expr op=('=='|'!=')expr
     |ID
     |'('expr')'
