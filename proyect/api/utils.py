@@ -1,9 +1,14 @@
-from antlr4 import*
-import lenguage.GrammarLexer as GrammarLexer
-import lenguage.GrammarParser as GrammarParser
-import io
+from antlr4 import *
+from lenguage.GrammarLexer import GrammarLexer
+from lenguage.GrammarParser import GrammarParser
+#import lenguage.GrammarLexer as GrammarLexer
+#import lenguage.GrammarParser as GrammarParser
+import traceback
+
+import  io
 import sys
-import lenguage.MyVisitor as MyVisitor
+#import lenguage.MyVisitor as MyVisitor
+from lenguage.MyVisitor import MyVisitor
 
 def run_code(code:str):
     input_stream=InputStream(code)
@@ -12,15 +17,23 @@ def run_code(code:str):
     parser=GrammarParser(stream)
     tree=parser.program()
 
-    # Capturar salida
+    # Capturan la salida 
     old_stdout=sys.stdout
     buf = io.StringIO()
     sys.stdout = buf
-    #Creamos un objeto de nuestro visitor
-    visitor = MyVisitor
-    #Visitamos el arbol con nuestro visitor
-    visitor.visit(tree)
-    # Capturar la salida
-    output=buf.getvalue()
-
-    return output
+    
+    try:
+        #Creamos un objeto de nuestro visitor
+        visitor = MyVisitor()
+        #Visitamos el arbol con nuestro visitor
+        visitor.visit(tree)
+        # Capturamos la salida
+        output = buf.getvalue()
+        #Retornamos la salida de la operacion
+        return output
+    #Capturamos excepciones
+    except Exception:
+        tb = traceback.format_exc()
+        return tb
+    finally:
+        sys.stdout = old_stdout
