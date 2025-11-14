@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.0:5173',
     'compilador-l2mw.onrender.com',
+    'compilador-sooty.vercel.app'
 ]
 
 
@@ -61,7 +62,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ALL_ORIGINS=True
 
 CORS_ALLOWED_ALL_ORIGINS=[
-    'https://compilador-sooty.vercel.app/'
+    'https://compilador-sooty.vercel.app'
 ]
 
 ROOT_URLCONF = 'proyect.urls'
