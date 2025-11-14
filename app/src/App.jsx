@@ -14,7 +14,7 @@ function App() {
 
   const handleSubmit=async ()=>{
     setLoading(true);
-    setOutput(''); //Limpiar salida anterior
+    setOutput(''); //Limpiar salida anterior 
     try {
       const req = await axios.post('https://compilador-l2mw.onrender.com/api/code', code);
       await setOutput(req.data.output);
