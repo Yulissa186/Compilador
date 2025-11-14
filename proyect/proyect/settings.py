@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1:5173',
     'compilador-l2mw.onrender.com',
-    'compilador-sooty.vercel.app'
+    'compilador-oex7.vercel.app/'
 ]
 
 
