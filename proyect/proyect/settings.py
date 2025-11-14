@@ -60,6 +60,10 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ALL_ORIGINS=True
 
+CORS_ALLOWED_ALL_ORIGINS=[
+    'https://compilador-sooty.vercel.app/'
+]
+
 ROOT_URLCONF = 'proyect.urls'
 
 TEMPLATES = [
