@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.0:5173',
+    'compilador-l2mw.onrender.com',
 ]
 
 
