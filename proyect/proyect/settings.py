@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%2^e)=+)u-7zd+!(bwkw!z663mdoa!)5*)uz8^!mjq9u8@+4-s
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.0:5173',
+    '127.0.0.1:5173',
     'compilador-l2mw.onrender.com',
     'compilador-sooty.vercel.app'
 ]
